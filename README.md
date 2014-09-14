@@ -15,7 +15,7 @@ To install gLogs simply drag and drop the addons folder in your 'garrysmod' root
 Open 'addons/gLogs/lua/glogs/sv_config.lua' in a text editor and enter your MySQL credentials as well as your server id, the log expiration time and if you wish to enable some of the existing log hooks already made. Make sure that your server id is different for every server that is connecting to your database.
 
 To install the gLogs website simply copy the files in the 'Web' folder to the root or in a folder on your web host.
-Now open your web browser and navigate to 'www.yourwebsite.com/<gLogsInstallPath>/install' and follow the instructions on screen.
+Now open your web browser and navigate to 'www.yourwebsite.com/(gLogsInstallPath)/install' and follow the instructions on screen.
 
 gLogs for Devs
 --------------
