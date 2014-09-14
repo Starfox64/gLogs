@@ -16,14 +16,22 @@ end
 
 gLogs.db:connect()
 
-function gLogs.AddLog( type, log, noTimestamp )
+function gLogs.AddLog( logtype, log, noTimestamp )
 	if not noTimestamp then
 		log = "[ "..os.date().." ] "..log
 	end
 
-	/*if type(type) != "string" then
-		error("string expected, got "..type(type))
-	end*/
+	if type(logtype) != "string" then
+		error("string expected, got "..type(logtype))
+	end
+	
+	if type(log) != "string" then
+		error("string expected, got "..type(log))
+	end
+	
+	logtype = gLogs.db:escape(logtype)
+	log = gLogs.db:escape(log)
+	
 	local query = gLogs.db:query("INSERT INTO `"..gLogs.Database.."`.`"..gLogs.CurrentTable.."` (`line`, `type`, `log`) VALUES (NULL, '"..type.."', '"..log.."');")
 
 	function query:onError( err, sql )
