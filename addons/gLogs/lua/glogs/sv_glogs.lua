@@ -69,7 +69,7 @@ function gLogs.CleanUpLogs()
 	local query = gLogs.db:query("SELECT `logname`,`expire` FROM `"..gLogs.Database.."`.`manifest` WHERE `server` = "..gLogs.ServerID..";")
 
 	function query:onSuccess( data )
-		print("[gLogs] Removing old log tables...")
+		print("[gLogs] Looking for old log tables...")
 		for k,log in pairs(data) do
 			if tonumber(log.expire) < os.time() then
 				local clear = gLogs.db:query("DELETE FROM `"..gLogs.Database.."`.`manifest` WHERE `logname` = \""..log.logname.."\";")
