@@ -32,7 +32,7 @@ function gLogs.AddLog( logtype, log, noTimestamp )
 	logtype = gLogs.db:escape(logtype)
 	log = gLogs.db:escape(log)
 	
-	local query = gLogs.db:query("INSERT INTO `"..gLogs.Database.."`.`"..gLogs.CurrentTable.."` (`line`, `type`, `log`) VALUES (NULL, '"..type.."', '"..log.."');")
+	local query = gLogs.db:query("INSERT INTO `"..gLogs.Database.."`.`"..gLogs.CurrentTable.."` (`line`, `type`, `log`) VALUES (NULL, '"..logtype.."', '"..log.."');")
 
 	function query:onError( err, sql )
 		print("[gLogs] Failed to insert log!")
