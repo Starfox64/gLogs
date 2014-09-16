@@ -1,6 +1,6 @@
 require("mysqloo")
 
-gLogs.Version = "0.1"
+gLogs.Version = "0.3"
 gLogs.db = mysqloo.connect(gLogs.Host, gLogs.User, gLogs.Pass, gLogs.Database, gLogs.Port)
 
 function gLogs.db:onConnected()
