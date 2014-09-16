@@ -6,6 +6,7 @@ gLogs.Port = 3306           -- The port of your MySQL server.
 
 gLogs.ServerID = 1          -- The ID of your server (available in the 'servers' panel).
 gLogs.ExpTime = 604800      -- Amount of time in seconds before the destruction of a log table (604800 = 7 days).
+gLogs.Master = true         -- Is this server the master server meaning it will be the one dealing with old log tables.
 
 gLogs.DarkRP = false        -- Hook DarkRP's logging system to gLogs.
 gLogs.Custom = true         -- Enable various custom logs like Deaths and connections.
