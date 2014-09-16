@@ -6,7 +6,9 @@ gLogs.db = mysqloo.connect(gLogs.Host, gLogs.User, gLogs.Pass, gLogs.Database, g
 function gLogs.db:onConnected()
 	print("[gLogs] Successfully connected!")
 	gLogs.InitializeTable()
-	gLogs.CleanUpLogs()
+	if gLogs.Master then
+		gLogs.CleanUpLogs()
+	end
 end
 
 function gLogs.db:onConnectionFailed( err )
