@@ -4,6 +4,10 @@ print("[gLogs] Initializing...")
 -- Load files...
 include("glogs/sv_config.lua")
 include("glogs/sv_glogs.lua")
-include("glogs/sv_loghooks.lua")
+-- Load log hooks...
+local hooks = file.Find("gLogs/hooks/*.lua", "LUA")
+for k,v in pairs(hooks) do
+	include(v)
+end
 -- Lets let them know that we are done.
 print("[gLogs] Initialized Version: "..gLogs.Version)
