@@ -5,18 +5,16 @@
 
 			<meta http-equiv="Content-Type" content="text/html; Charset=UTF-8">
 
-			<link rel="stylesheet" href="../styles/default.css" type="text/css">
+			<link rel="stylesheet" href="style.css" type="text/css">
 		</head>
 
 		<body>
 			<?
+			
 			require 'functions.php';
-
-			// Form
-
+			
 			function step_1(){
 				echo '<form method="post" action="index.php">
-				<p class="big">&nbsp;</p>
 				<table width="80%" border="0" align="center">
 					<tr align="center" valign="middle" bgcolor="#FFFFFF">
 						<th height="100" colspan="2" class="colhead">
@@ -90,7 +88,6 @@
 						</td>
 					</tr>
 				</table>
-				<p>&nbsp;</p>
 			</form>
 		</body>
 	</html>
@@ -100,7 +97,7 @@
 			include('../include/secrets.php');
 
 			if (defined("GLOGS_INSTALLED")){
-				die('<center><h1><a href="../index.php">Already installed please return to the index</a></h1></center>');
+				die('<center><h1>Already installed please return to the <a href="../">root directory</a></h1></center>');
 				exit;
 			}
 
