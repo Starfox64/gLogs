@@ -20,7 +20,7 @@ table{
 
 table.main,
 table.mainouter{
-	background-color:#F5F4EA; // #F4F4F0;
+	background-color:#F5F4EA; /* #F4F4F0; */
 }
 
 table.bottom{
@@ -41,10 +41,10 @@ p{
 }
 
 p.sub{ 
-  margin-bottom:4pt;
+	margin-bottom:4pt;
 }
 
-td {
+td{
 	font-size:8pt;
 	border:solid #000000 1px;
 }
@@ -55,168 +55,172 @@ td.embedded{
 	text-align:left;
 }
 
-td.bottom {
-  border: none;
+td.bottom{
+	border:none;
 }
 
-td.heading {
-  font-weight: bold;
+td.heading{
+	font-weight:bold;
 }
 
-td.text {
-  padding: 10pt;
-  text-align: left;
+td.text{
+	padding:10pt;
+	text-align:left;
 }
 
-td.comment {
-  padding: 10pt;
-  font-size: 8pt;
-  text-align: left;
+td.comment{
+	padding:10pt;
+	font-size:8pt;
+	text-align:left;
 }
 
-td.colhead {
-  font-weight: bold;
-  color: #ffffff;
-  background-color: #0055A4;
+td.colhead{
+	font-weight:bold;
+	color:#ffffff;
+	background-color:#0055A4;
 }
 
-td.rowhead {
-  font-weight: bold;
-  text-align: right;
-  vertical-align: top;
+td.rowhead{
+	font-weight:bold;
+	text-align:right;
+	vertical-align:top;
 }
 
-td.title {
-	font-size: 14pt;
+td.title{
+	font-size:14pt;
 }
 
-td.navigation {
-	font-weight: bold;
-	font-size: 10pt;
-   border: none;
+td.navigation{
+	font-weight:bold;
+	font-size:10pt;
+	border:none;
 }
 
-td.clear {
-  padding: 0px;
-  border: 0px;
-  background: transparent;
+td.clear{
+	padding:0px;
+	border:0px;
+	background:transparent;
 }
 
-form {
-	margin-top: 0;
-	margin-bottom: 0;
+form{
+	margin-top:0;
+	margin-bottom:0;
 }
 
-.sublink {
+.sublink{
 	font-style: italic;
 	font-size: 7pt;
 	font-weight: normal;
 }
 
-font.gray
-{
-  color: #ACA899;
-  text-decoration: underline;
+font.gray{
+	color:#ACA899;
+	text-decoration:underline;
 }
 
-a:link, a:visited {
-  text-decoration: underline;
-  color: #000000;
-  /*font-weight: bold;*/
+a:link,
+a:visited{
+	text-decoration:underline;
+	color:#000000;
+	/* font-weight: bold; */
 }
 
-a:hover {
-  color: #FF0000;
+a:hover{
+	color:#FF0000;
 }
 
-a.index {
-	font-weight: bold;
+a.index{
+	font-weight:bold;
 }
 
-a.biglink {
-	font-weight: bold;
-	font-size: 12pt;
+a.biglink{
+	font-weight:bold;
+	font-size:12pt;
 }
 
-a.altlink:link, a.altlink:visited{
-	font-weight: bold;
-	color: #A83838;
-	text-decoration: none;
+a.altlink:link,
+a.altlink:visited{
+	font-weight:bold;
+	color:#A83838;
+	text-decoration:none;
 }
 
-a.altlink:hover {
-  text-decoration: underline;
+a.altlink:hover{
+	text-decoration:underline;
 }
 
-a.altlink_blue:link, a.altlink_blue:visited{
-	font-weight: bold;
-	color: #004E98;
-	text-decoration: none;
+a.altlink_blue:link,
+a.altlink_blue:visited{
+	font-weight:bold;
+	color:#004E98;
+	text-decoration:none;
 }
 
-a.altlink_blue:hover {
-  text-decoration: underline;
+a.altlink_blue:hover{
+	text-decoration:underline;
 }
 
-a.altlink_green:link, a.altlink_green:visited{
-	font-weight: bold;
-	color: #007800;
-	text-decoration: none;
+a.altlink_green:link,
+a.altlink_green:visited{
+	font-weight:bold;
+	color:#007800;
+	text-decoration:none;
 }
 
-a.altlink_green:hover {
-  text-decoration: underline;
+a.altlink_green:hover{
+	text-decoration:underline;
 }
 
-.important {
-	font-weight: bold;
-	font-size: 8pt;
+.important{
+	font-weight:bold;
+	font-size:8pt;
 }
 
-.red {
-	color: #ee0000;
+.red{
+	color:#ee0000;
 }
 
-.yellow {
-	color: #997700;
+.yellow{
+	color:#997700;
 }
 
-.green {
-	color: #000000;
+.green{
+	color:#000000;
 }
 
-input, select, textarea {
-	font-family: "tahoma", "arial", "helvetica", "sans-serif";
-	font-size: 8pt;
+input,
+select,
+textarea{
+	font-family:"tahoma","arial","helvetica","sans-serif";
+	font-size:8pt;
 }
 
-.btn {
-  width: 75px;
-  height: 23px;
+.btn{
+	width:75px;
+	height:23px;
 }
 
-.small {
-  font-size: 7pt;
+.small{
+	font-size:7pt;
 }
 
-.big {
-  font-size: 10pt;
+.big{
+	font-size:10pt;
 }
 
-li {
-  margin-top: 6pt;
-  margin-bottom: 6pt;
+li{
+	margin-top:6pt;
+	margin-bottom:6pt;
 }
 
-ul {
-  margin-left: 16pt;
-  margin-top: 0px;
-  margin-bottom: 0px;
+ul{
+	margin-left:16pt;
+	margin-top:0px;
+	margin-bottom:0px;
 }
 
-img.border  
-{  
-  border-style: solid;  
-  border-color: #000000; 
-  border-width: 1px; 
+img.border{  
+	border-style:solid;  
+	border-color:#000000; 
+	border-width:1px; 
 }
