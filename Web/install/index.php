@@ -45,7 +45,7 @@
 						<td><input name="database_password" type="text" id="database_password" placeholder="Database Password" size="40" maxlength="40"></td>
 					</tr>
 					<tr>
-						<td colspan="2" class="colhead">Sysop User Configuration</td>
+						<td colspan="2" class="colhead">Super Admin Configuration</td>
 					</tr>
 					<tr>
 						<td>Sysop Username</td>
@@ -100,7 +100,7 @@
 			include('../include/secrets.php');
 
 			if (defined("GLOGS_INSTALLED")){
-				die('<center><h1>Already installed <a href="../index.php">INDEX</a></h1></center>');
+				die('<center><h1><a href="../index.php">Already installed please return to the index</a></h1></center>');
 				exit;
 			}
 
