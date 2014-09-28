@@ -1,6 +1,5 @@
 require("mysqloo")
 
-gLogs.Version = "0.3"
 gLogs.db = mysqloo.connect(gLogs.Host, gLogs.User, gLogs.Pass, gLogs.Database, gLogs.Port)
 
 function gLogs.db:onConnected()
@@ -18,23 +17,19 @@ end
 
 gLogs.db:connect()
 
-function gLogs.AddLog( logtype, log, noTimestamp )
-	if not noTimestamp then
-		log = "[ "..os.date().." ] "..log
-	end
+function gLogs.AddLog( logtype, log )
+	if not gLogs.CurrentTable then return end
 
 	if type(logtype) != "string" then
 		error("string expected, got "..type(logtype))
-	end
-	
-	if type(log) != "string" then
+	elseif type(log) != "string" then
 		error("string expected, got "..type(log))
-	end
-	
+	end	
+
 	logtype = gLogs.db:escape(logtype)
 	log = gLogs.db:escape(log)
 	
-	local query = gLogs.db:query("INSERT INTO `"..gLogs.Database.."`.`"..gLogs.CurrentTable.."` (`line`, `type`, `log`) VALUES (NULL, '"..logtype.."', '"..log.."');")
+	local query = gLogs.db:query("INSERT INTO `"..gLogs.Database.."`.`"..gLogs.CurrentTable.."` (`line`, `type`, `time`, `log`) VALUES (NULL, '"..logtype.."', "..os.time()..",'"..log.."');")
 
 	function query:onError( err, sql )
 		print("[gLogs] Failed to insert log!")
@@ -48,7 +43,7 @@ end
 function gLogs.InitializeTable()
 	local date = string.Replace(string.Replace(string.Replace(os.date(),":","-"),"/","-")," ","-")
 	gLogs.CurrentTable = gLogs.ServerID.."-"..date
-	local query = gLogs.db:query("CREATE TABLE IF NOT EXISTS `"..gLogs.Database.."`.`"..gLogs.CurrentTable.."` ( `line` int(11) NOT NULL AUTO_INCREMENT, `type` varchar(64) NOT NULL, `log` text NOT NULL, PRIMARY KEY (`line`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;")
+	local query = gLogs.db:query("CREATE TABLE IF NOT EXISTS `"..gLogs.Database.."`.`"..gLogs.CurrentTable.."` ( `line` int(10) NOT NULL AUTO_INCREMENT, `type` varchar(20) NOT NULL, `time` int(10) NOT NULL, `log` text NOT NULL, PRIMARY KEY (`line`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;")
 
 	function query:onSuccess( data )
 		print("[gLogs] Today's log table successfully created!")
