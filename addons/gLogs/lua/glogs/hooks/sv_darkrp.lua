@@ -4,13 +4,13 @@ if gLogs.DarkRP then -- if DarkRP's logging integration is enabled in gLogs's co
 		local function AdminLog(message, colour) -- Required for DarkRP
 			local RF = RecipientFilter()
 			for k,v in pairs(player.GetAll()) do
-				local canHear = hook.Call("canSeeLogMessage", GAMEMODE, v, message, colour)
+				local canHear = hook.Call("canSeeLogMessage",GAMEMODE,v,message,colour)
 
 				if canHear then
 					RF:AddPlayer(v)
 				end
 			end
-			umsg.Start("DRPLogMsg", RF)
+			umsg.Start("DRPLogMsg",RF)
 				umsg.Short(colour.r)
 				umsg.Short(colour.g)
 				umsg.Short(colour.b)
@@ -26,7 +26,7 @@ if gLogs.DarkRP then -- if DarkRP's logging integration is enabled in gLogs's co
 			end
 			if not GAMEMODE.Config.logging or not text then return end
 			if not DarkRPFile then
-				if not file.IsDir("DarkRP_logs", "DATA") then
+				if not file.IsDir("DarkRP_logs","DATA") then
 					file.CreateDir("DarkRP_logs")
 				end
 				DarkRPFile = "DarkRP_logs/"..os.date("%m_%d_%Y %I_%M %p")..".txt"
@@ -37,5 +37,4 @@ if gLogs.DarkRP then -- if DarkRP's logging integration is enabled in gLogs's co
 		end
 	end)
 end
-
 -- DarkRP's comments were removed so you can quickly identify the important ones for gLogs.
